@@ -2,8 +2,7 @@
 name: publish-to-github-pages
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -31,7 +30,7 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npm run build
+        run: npx --no-install next build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
